@@ -1,36 +1,48 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Black">
+      <UniqueIdentifier>{2234E60C-8E48-0EBE-57CA-B11DC39D0AEF}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Black\Events">
+      <UniqueIdentifier>{C6A59759-B208-27FE-5B8E-5FB447D0F280}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\BlackCore\Application.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Black.h" />
+    <ClInclude Include="src\Black\Application.h">
+      <Filter>Black</Filter>
     </ClInclude>
-    <ClInclude Include="Src\BlackCore\Core.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Black\Core.h">
+      <Filter>Black</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Black.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Black\EntryPoint.h">
+      <Filter>Black</Filter>
     </ClInclude>
-    <ClInclude Include="Src\EntryPoint.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Black\Events\ApplicationEvent.h">
+      <Filter>Black\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Black\Events\Event.h">
+      <Filter>Black\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Black\Events\KeyEvent.h">
+      <Filter>Black\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Black\Events\MouseEvent.h">
+      <Filter>Black\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Black\Log.h">
+      <Filter>Black</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\BlackCore\Application.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Black\Application.cpp">
+      <Filter>Black</Filter>
     </ClCompile>
+    <ClCompile Include="src\Black\Log.cpp">
+      <Filter>Black</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bpch.cpp" />
   </ItemGroup>
 </Project>

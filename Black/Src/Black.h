@@ -1,10 +1,9 @@
 #pragma once
-#include"BlackCore/Application.h"
-#include"BlackCore/Core.h"
-
+#include"Black/Application.h"
+#include"Black/Core.h"
+#include"Black/Log.h"
 
 
 //-------------Entry Point
-
-#include "EntryPoint.h"
+#include "Black/EntryPoint.h"
 //-----------------------

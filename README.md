@@ -1,2 +1,2 @@
 # Black
-Black Engine
+A work in progress Game Engine made using Opengl

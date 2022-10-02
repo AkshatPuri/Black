@@ -6,4 +6,4 @@
 
 [submodule "Black/Vendor/GLFW"]
 	path = Black/Vendor/GLFW
-	url = https://github.com/AkshatPuri/glfw
+	url = ../../AkshatPuri/glfw.git

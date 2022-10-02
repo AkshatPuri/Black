@@ -12,6 +12,9 @@
 #include <unordered_map>
 #include <unordered_set>
 
+
+#include "Black/Log.h"
+
 #ifdef BLACK_PLATFORM_WINDOWS
 #include <Windows.h>
 #endif

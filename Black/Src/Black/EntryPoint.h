@@ -7,7 +7,7 @@
 	int main(int argc, char** argv)
 	{
 		Black::Log::Init();
-		BLACK_LOG_INFO("Black Initialized");
+		BLACK_CORE_INFO("Black Initialized");
 		BLACK_WARN("Hello Black Engine!");
 
 		auto app = Black:: CreateApplication();

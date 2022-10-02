@@ -1,3 +1,8 @@
 [submodule "Black/Vendor/spdlog"]
 	path = Black/Vendor/spdlog
 	url = https://github.com/gabime/spdlog
+
+
+[submodule "Black/Vendor/GLFW"]
+	path = Black/Vendor/GLFW
+	url = https://github.com/AkshatPuri/glfw

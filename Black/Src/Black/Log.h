@@ -23,11 +23,11 @@ namespace Black
 }
 
 //Core log macros
-#define BLACK_LOG_INFO(...)  Black ::Log::GetCoreLogger()->info(__VA_ARGS__);
-#define BLACK_LOG_ERROR(...)  Black ::Log::GetCoreLogger()->error(__VA_ARGS__);
-#define BLACK_LOG_WARN(...)  Black ::Log::GetCoreLogger()->warn(__VA_ARGS__);
-#define BLACK_LOG_TRACE(...)  Black ::Log::GetCoreLogger()->trace(__VA_ARGS__);
-#define BLACK_LOG_FATAL(...)  Black ::Log::GetCoreLogger()->fatal(__VA_ARGS__);
+#define BLACK_CORE_INFO(...)  Black ::Log::GetCoreLogger()->info(__VA_ARGS__);
+#define BLACK_CORE_ERROR(...)  Black ::Log::GetCoreLogger()->error(__VA_ARGS__);
+#define BLACK_CORE_WARN(...)  Black ::Log::GetCoreLogger()->warn(__VA_ARGS__);
+#define BLACK_CORE_TRACE(...)  Black ::Log::GetCoreLogger()->trace(__VA_ARGS__);
+#define BLACK_CORE_FATAL(...)  Black ::Log::GetCoreLogger()->fatal(__VA_ARGS__);
 
 //Client log macros
 #define BLACK_LOG(...)  Black ::Log::GetClientLogger()->info(__VA_ARGS__);

@@ -12,10 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 --Include directories relative to root folder
 IncludeDir = {}
-IncludeDir["GLFW"] = "Black/vendor/GLFW/include"
+IncludeDir["GLFW"] = "Black/Vendor/GLFW/include"
 
 
-include "Black/vendor/GLFW"
+include "Black/Vendor/GLFW"
 
 project "Black"
 	location "Black"
@@ -37,7 +37,7 @@ project "Black"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include",
+		"%{prj.name}/Vendor/spdlog/include",
 		"%{IncludeDir.GLFW}"
 	}
 	links
@@ -94,7 +94,7 @@ project "Sandbox"
 
 	includedirs
 	{
-		"Black/vendor/spdlog/include",
+		"Black/Vendor/spdlog/include",
 		"Black/src"
 	}
 

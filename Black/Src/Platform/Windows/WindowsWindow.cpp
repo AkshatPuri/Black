@@ -5,6 +5,8 @@
 #include "Black/Events/MouseEvent.h"
 #include "Black/Events/KeyEvent.h"
 
+#include<glad/glad.h>
+
 namespace Black 
 {
 	static bool s_GLFWInitialized = false;
@@ -51,6 +53,10 @@ namespace Black
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		BLACK_CORE_ASSERT(status, "Failed to initialize Glad!");
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
@@ -73,6 +79,9 @@ namespace Black
 			WindowCloseEvent event;
 			data.EventCallback(event);
 		});
+
+
+		
 
 		glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
 		{
@@ -99,6 +108,13 @@ namespace Black
 				break;
 			}
 			}
+		});
+
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keycode)
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			KeyTypedEvent event(keycode);
+			data.EventCallback(event);
 		});
 
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods)

@@ -7,7 +7,7 @@ class Sandbox : public Black::Application
 public:
 	Sandbox()
 	{
-
+		PushOverlay(new Black::ImGuiLayer());
 	}
 
 	~Sandbox()

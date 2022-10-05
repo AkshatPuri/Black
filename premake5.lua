@@ -13,9 +13,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 --Include directories relative to root folder
 IncludeDir = {}
 IncludeDir["GLFW"] = "Black/Vendor/GLFW/include"
-
+IncludeDir["Glad"] = "Black/Vendor/Glad/include"
+IncludeDir["ImGui"] = "Black/Vendor/ImGui"
 
 include "Black/Vendor/GLFW"
+include "Black/Vendor/Glad"
+include "Black/Vendor/ImGui"
 
 project "Black"
 	location "Black"
@@ -38,11 +41,15 @@ project "Black"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/Vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 	links
 	{
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -54,7 +61,8 @@ project "Black"
 		defines
 		{
 			"BLACK_PLATFORM_WINDOWS",
-			"BLACK_BUILD_DLL"
+			"BLACK_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -68,14 +76,17 @@ project "Black"
 			"BLACK_DEBUG",
 			"BLACK_ENABLE_ASSERT"
 		}
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "BLACK_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "BLACK_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -115,12 +126,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "BLACK_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "BLACK_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "BLACK_DIST"
+		buildoptions "/MD"
 		optimize "On"

@@ -1,9 +1,14 @@
 #pragma once
 #include "Core.h"
-#include"Window.h"
-#include"Events/Event.h"
-#include"Events/ApplicationEvent.h"
+
+
+#include "Window.h"
 #include "Black/LayerStack.h"
+#include "Events/Event.h"
+#include "Events/ApplicationEvent.h"
+
+#include "Black/ImGui/ImGuiLayer.h"
+
 namespace Black 
 {
 	class BLACKAPI Application
@@ -24,6 +29,7 @@ namespace Black
 		bool OnWindowShouldClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImguiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 

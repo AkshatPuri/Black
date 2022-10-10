@@ -19,6 +19,9 @@ namespace Black
 		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create());	
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		m_ImguiLayer = new ImGuiLayer();
+		PushOverlay(m_ImguiLayer);
 	}
 
 	Application::~Application()
@@ -30,13 +33,13 @@ namespace Black
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
-		layer->OnAttach();
+		
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
-		layer->OnAttach();
+	
 	}
 
 
@@ -69,6 +72,11 @@ namespace Black
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+
+			m_ImguiLayer->Begin();
+			for (Layer* layer : m_LayerStack)
+				layer->OnImGuiRender();
+			m_ImguiLayer->End();
 
 			m_Window->OnUpdate();
 		}

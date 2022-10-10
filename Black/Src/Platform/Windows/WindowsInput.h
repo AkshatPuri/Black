@@ -3,7 +3,7 @@
 
 namespace Black
 {
-    class WindowsWindowInput : public Input
+    class WindowsInput : public Input
     {
     protected:
         

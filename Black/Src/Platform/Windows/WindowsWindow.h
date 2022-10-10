@@ -1,6 +1,8 @@
 #pragma once
 #include "Black/Window.h"
 #include<GLFW/glfw3.h>
+
+#include "Black/Renderer/GraphicsContext.h"
 namespace Black
 {
 	class BLACKAPI WindowsWindow : public Window
@@ -27,6 +29,7 @@ namespace Black
 		virtual void Shutdown();
 
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData {
 			std::string Title;

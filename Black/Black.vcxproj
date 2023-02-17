@@ -143,6 +143,16 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Black\Core\Timestep.h" />
+    <ClInclude Include="Src\Black\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="Src\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="Src\Black\Renderer\RendererAPI.h" />
+    <ClInclude Include="Src\Black\Renderer\RenderCommand.h" />
+    <ClInclude Include="Src\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="Src\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="Src\Black\Renderer\Renderer.h" />
+    <ClInclude Include="Src\Black\Renderer\Buffer.h" />
+    <ClInclude Include="Src\Black\Renderer\Shader.h" />
     <ClInclude Include="Src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="Src\Black\Renderer\GraphicsContext.h" />
     <ClInclude Include="Vendor\glm\glm\common.hpp" />
@@ -579,8 +589,18 @@
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\bpch.h" />
+    <ClInclude Include="Src\Black\Renderer\VertexArray.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Black\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="Src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="Src\Black\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="Src\Black\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="Src\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="Src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="Src\Black\Renderer\Renderer.cpp" />
+    <ClCompile Include="Src\Black\Renderer\Buffer.cpp" />
+    <ClCompile Include="Src\Black\Renderer\Shader.cpp" />
     <ClCompile Include="Src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Black\Application.cpp" />
     <ClCompile Include="src\Black\ImGui\ImGuiBuild.cpp" />
@@ -593,6 +613,7 @@
     <ClCompile Include="src\bpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Src\Black\Renderer\VertexArray.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Vendor\GLFW\GLFW.vcxproj">

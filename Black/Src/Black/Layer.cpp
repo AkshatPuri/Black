@@ -3,11 +3,9 @@
 
 namespace Black
 {
-Layer::Layer(const std::string & name)
-	:m_DebugName(name)
-{
-}
-Layer::~Layer()
-{
-}
+	Layer::Layer(const std::string& name)
+		:m_DebugName(name)
+	{
+	}
+
 }

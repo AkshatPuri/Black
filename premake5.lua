@@ -12,15 +12,19 @@ workspace "Black"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 --Include directories relative to root folder
+
 IncludeDir = {}
 IncludeDir["GLFW"] = "Black/Vendor/GLFW/include"
 IncludeDir["Glad"] = "Black/Vendor/Glad/include"
 IncludeDir["ImGui"] = "Black/Vendor/ImGui"
 IncludeDir["glm"] = "Black/Vendor/glm"
 
+
+group "Dependencies"
 include "Black/Vendor/GLFW"
 include "Black/Vendor/Glad"
 include "Black/Vendor/ImGui"
+group ""
 
 project "Black"
 	location "Black"
@@ -75,6 +79,11 @@ project "Black"
 			"GLFW_INCLUDE_NONE"
 		}
 
+		--[[ Used for Dynamically linking
+		postbuildcommands
+		{
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
+		}]]--
 		
 
 	filter "configurations:Debug"

@@ -11,7 +11,7 @@ public:
 	{
 	}
 
-	void OnUpdate() override
+	void OnUpdate(Black::Timestep ts ) override
 	{
 		if (Black::Input::IsKeyPressed(BLACK_KEY_TAB))
 			BLACK_TRACE("Tab key is pressed (poll)!");

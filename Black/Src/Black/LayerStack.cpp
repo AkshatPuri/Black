@@ -5,7 +5,7 @@ namespace Black
 {
 	LayerStack::LayerStack()
 	{
-	
+		
 	}
 
 	LayerStack::~LayerStack()
@@ -25,7 +25,7 @@ namespace Black
 
 	void LayerStack::PushOverlay(Layer* layer)
 	{
-		m_Layers.emplace_back(layer);
+		m_Layers.emplace_back( layer);
 		layer->OnAttach();
 	}
 
@@ -36,10 +36,9 @@ namespace Black
 
 		if (it != m_Layers.end())
 		{
-			layer->OnDetach();
 			m_Layers.erase(it);
 			m_LayerInsertIndex--;
-			
+			layer->OnDetach();
 		}
 	}
 
@@ -49,9 +48,8 @@ namespace Black
 		auto it = std::find(m_Layers.begin(), m_Layers.end(), overlay);
 		if (it != m_Layers.end())
 		{
-			overlay->OnDetach();
 			m_Layers.erase(it);
-		
+			overlay->OnDetach();
 		}
 	}
 }

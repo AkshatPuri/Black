@@ -15,7 +15,7 @@ namespace Black
 	{
 	public:
 		Application();
-		virtual ~Application() = default;
+		virtual ~Application();
 
 		void Run();
 		void OnEvent(Event& e);
@@ -32,10 +32,10 @@ namespace Black
 		ImGuiLayer* m_ImguiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-		float m_LastFrameTime = 0;
+
 	private:
 		static Application* s_Instance;
-		
+
 	};
 
 

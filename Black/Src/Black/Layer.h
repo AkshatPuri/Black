@@ -1,6 +1,5 @@
 #pragma once
 #include "Black/Core.h"
-#include "Black/Core/Timestep.h"
 #include"Black/Events/Event.h"
 
 namespace Black
@@ -11,10 +10,10 @@ namespace Black
 	public:
 		Layer(const std::string& name = "Layer");
 
-		virtual ~Layer()=default;
+		virtual ~Layer();
 		virtual void OnDetach() {};
 		virtual void OnAttach() {};
-		virtual void OnUpdate(Timestep ts) {};
+		virtual void OnUpdate() {};
 		virtual void OnEvent(Event& event){}
 		virtual void OnImGuiRender() {}
 

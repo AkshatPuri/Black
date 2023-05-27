@@ -24,6 +24,8 @@ namespace Black
 
 		inline virtual void* GetNativeWindow() const { return m_Window; }
 
+		inline virtual void ChangeName(const std::string& name) { m_Data.Title = name; glfwSetWindowTitle(m_Window, name.c_str());}
+
 	private:
 		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();

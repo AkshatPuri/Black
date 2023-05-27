@@ -18,6 +18,7 @@ namespace Black
 		virtual void OnDetach() override;
 		virtual void OnImGuiRender() override;
 		
+		void SetDarkThemeColors();
 		void Begin();
 		void End();
 

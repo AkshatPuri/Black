@@ -27,3 +27,7 @@
 
 
 #define BLACK_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
+
+#if _MSC_VER >= 1910 && _MSC_VER < 1920
+#define no_init_all deprecated
+#endif

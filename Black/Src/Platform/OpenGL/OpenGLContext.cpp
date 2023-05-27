@@ -10,7 +10,7 @@ namespace Black
 	OpenGLContext::OpenGLContext(GLFWwindow* windowHandle)
 		:m_WindowHandle(windowHandle)
 	{
-		BLACK_ASSERT(windowHandle, "Window handle is null!")
+		BLACK_ASSERT(windowHandle, "Window handle is null!");
 	}
 
 
@@ -19,6 +19,7 @@ namespace Black
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		BLACK_ASSERT(status, "Failed to initialize Glad!");
+		BLACK_CORE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
 	}
 
 	void OpenGLContext::SwapBuffers()

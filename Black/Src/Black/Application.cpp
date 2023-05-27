@@ -13,7 +13,7 @@ namespace Black
 
 	Application::Application()
 	{
-		BLACK_CORE_ASSERT(!s_Instance, "Application alreay excists!");
+		BLACK_CORE_ASSERT(!s_Instance, "Application already excists!");
 		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create());	
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
@@ -62,7 +62,7 @@ namespace Black
 		
 		while (m_Running)
 		{
-			glClearColor(0, 1, 0, 1);
+			glClearColor(0.0f, 0.8f, 0.9f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			float time = (float)glfwGetTime();

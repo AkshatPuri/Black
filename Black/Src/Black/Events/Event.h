@@ -30,8 +30,7 @@ namespace Black {
 
 
 	class BLACKAPI Event
-	{
-		
+	{	
 	public:
 		bool Handled = false;
 
@@ -44,9 +43,6 @@ namespace Black {
 		{
 			return GetCategoryFlags() & category;
 		}
-
-
-
 	};
 
 
@@ -76,9 +72,9 @@ namespace Black {
 				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
+			return false;
 		}
-
-
+ 
 	private:
 		Event& m_Event;
 	};

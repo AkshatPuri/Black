@@ -7,6 +7,3 @@
 [submodule "Black/Vendor/glm"]
 	path = Black/Vendor/glm
 	url = https://github.com/g-truc/glm
-[submodule "Black/Vendor/ImGui"]
-	path = Black/Vendor/ImGui
-	url = https://github.com/AkshatPuri/imgui
